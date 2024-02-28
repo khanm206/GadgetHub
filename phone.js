@@ -162,9 +162,9 @@ loading(false);
 }
 
 const loadAllPhones = () => {
-    loadAllIphones();
-    loadAllSamPhones();
-    loadAllOppoPhones();
+    loadAllIphones(loadAllSamPhones(loadAllOppoPhones()));
+    ;
+    ;
 }
 
 loadAllPhones();
