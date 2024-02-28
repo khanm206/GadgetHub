@@ -32,7 +32,7 @@ if(!isShowAll){
         phoneCard.classList = 'card w-full border-white border-[1px] shadow-2xl';
         phoneCard.innerHTML = `<div class='bg-opacity-60'>
         <figure><img class= mt-6 src="${phone.image}"/></figure>
-<div class="card-body grid justify-center">
+<div class="card-body grid justify-center text-center">
     <h2 class="card-title text-xl text-center">${phone.phone_name}</h2>
     <p></p>
     <div class="card-actions justify-center">
