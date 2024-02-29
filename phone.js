@@ -124,7 +124,7 @@ const phoneDetails = (phone) => {
         <span
           class="absolute w-36 h-32 -top-8 -left-2 bg-violet-500 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
         <span
-          class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-10 z-10">Back</span>
+          class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-10 z-10">Close</span>
     </form>
   </div>
     `
