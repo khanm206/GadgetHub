@@ -97,7 +97,7 @@ const phoneDetails = (phone) => {
     <div id="image" class="flex justify-center">
     <img src="${phone.image}" alt="image not found">
   </div><br>
-  <h3 class="font-bold lg:text-2xl text-xl">${phone.name}</h3>
+  <h3 class="font-bold lg:text-2xl text-xl text-black">${phone.name}</h3>
   <p><span class="font-medium text-black">Brand: </span>${phone.brand}</p>
   <p><span class="font-medium text-black">Release Date: </span>${phone.releaseDate}</p>
   <p><span class="font-medium text-black">Storage: </span>${phone.mainFeatures.storage}</p>
