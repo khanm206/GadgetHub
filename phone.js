@@ -81,9 +81,11 @@ const clickedNext = () => {
 const clickShow = async (id) => {
     // loading(true);
 const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
-const data = await res.json();
+const allData = await res.json();
 
+const data = allData.data;
 phoneDetails(data);
+console.log(data)
 
 }
 
@@ -91,8 +93,42 @@ const phoneDetails = (phone) => {
     showModal.showModal()
     const details = document.getElementById('details');
     const phoneImage = document.getElementById('image');
-    // phoneImage.innerHTML = `<img src="${phone.image}" alt="image not found" />`
-    // console.log(phone.brand)
+    details.innerHTML = `
+    <div id="image" class="flex justify-center">
+    <img src="${phone.image}" alt="image not found">
+  </div><br>
+  <h3 class="font-bold lg:text-2xl text-xl">${phone.name}</h3>
+  <p><span class="font-medium text-black">Brand: </span>${phone.brand}</p>
+  <p><span class="font-medium text-black">Release Date: </span>${phone.releaseDate}</p>
+  <p><span class="font-medium text-black">Storage: </span>${phone.mainFeatures.storage}</p>
+  <p><span class="font-medium text-black">Display Size: </span>${phone.mainFeatures.displaySize}</p>
+  <p><span class="font-medium text-black">Chipset: </span>${phone.mainFeatures.chipSet}</p>
+  <p><span class="font-medium text-black">Memory: </span>${phone.mainFeatures.memory}</p>
+  <p><span class="font-medium text-black">WLAN: </span>${phone.others.WLAN}</p>
+  <p><span class="font-medium text-black">Bluetooth: </span>${phone.others.Bluetooth}</p>
+  <p><span class="font-medium text-black">GPS: </span>${phone.others.GPS}</p>
+  <p><span class="font-medium text-black">NFC: </span>${phone.others.NFC}</p>
+  <p><span class="font-medium text-black">Radio: </span>${phone.others.Radio}</p>
+  <p><span class="font-medium text-black">USB: </span>${phone.others.USB}</p>
+  <p><span class="font-medium text-black">Sensors: </span>${phone.mainFeatures.sensors}</p>
+  <div class="modal-action">
+    <form method="dialog">
+      
+      <button
+        class="overflow-hidden relative w-32 p-2 h-12 bg-blue-600 text-white border-none rounded-md text-xl font-medium cursor-pointer z-10 group">
+        Close
+        <span
+          class="absolute w-36 h-32 -top-8 -left-2 bg-pink-500 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
+        <span
+          class="absolute w-36 h-32 -top-8 -left-2 bg-sky-500 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
+        <span
+          class="absolute w-36 h-32 -top-8 -left-2 bg-violet-500 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
+        <span
+          class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-10 z-10">Back</span>
+    </form>
+  </div>
+    `
+    console.log(phone.brand)
    
 }
 
@@ -162,9 +198,9 @@ loading(false);
 }
 
 const loadAllPhones = () => {
-    loadAllIphones(loadAllSamPhones(loadAllOppoPhones()));
-    ;
-    ;
+    loadAllIphones();
+    loadAllSamPhones();
+    loadAllOppoPhones();
 }
 
 loadAllPhones();
