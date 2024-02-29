@@ -4,6 +4,10 @@ const loadPhone = async (searchText, isShowAll) => {
     const data = await res.json();
     const phones = data.data
     displayPhones(phones, isShowAll)
+    if(phones.length <= 0){
+        loadAllPhones();
+        return alert("No data found or item is not available");
+    }
 }
 
 
@@ -85,7 +89,6 @@ const allData = await res.json();
 
 const data = allData.data;
 phoneDetails(data);
-console.log(data)
 
 }
 
@@ -201,6 +204,10 @@ const loadAllPhones = () => {
     loadAllIphones();
     loadAllSamPhones();
     loadAllOppoPhones();
+}
+
+const nothing = (value) => {
+
 }
 
 loadAllPhones();
